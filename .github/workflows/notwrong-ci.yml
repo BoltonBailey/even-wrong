@@ -1,0 +1,49 @@
+name: NotWrong CI
+
+# Enforces the invariants for the AI-maintained `NotWrong` library described in
+# the README. The build and the cheap guards below run on the standard GitHub
+# runner. The authoritative "challenges proven" gate uses `comparator`, which
+# needs `landrun` + `lean4export` (see scripts/count_proven.sh); wire it to a
+# suitable (Linux) runner and uncomment the `comparator` job below.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build & guard NotWrong
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Build EvenWrong + NotWrong
+        uses: leanprover/lean-action@v1
+        with:
+          # EvenWrong intentionally contains `sorry`, so don't fail on warnings.
+          build-args: "EvenWrong NotWrong"
+
+      - name: NotWrong must be sorry-free
+        run: python3 scripts/check_no_sorry.py
+
+      - name: Report golf metric for NotWrong
+        run: |
+          echo "NotWrong golf metric: $(python3 scripts/golf_metric.py)"
+
+  # comparator:
+  #   name: Count proven challenges (authoritative gate)
+  #   runs-on: <self-hosted-linux-with-landrun>
+  #   needs: build
+  #   steps:
+  #     - uses: actions/checkout@v5
+  #     - run: lake exe cache get
+  #     - name: Run comparator over every comparator/*.json
+  #       env:
+  #         COMPARATOR_BIN: /opt/comparator/comparator
+  #         COMPARATOR_LANDRUN: /usr/local/bin/landrun
+  #         COMPARATOR_LEAN4EXPORT: /opt/lean4export/lean4export
+  #       run: scripts/count_proven.sh

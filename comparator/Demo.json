@@ -1,0 +1,7 @@
+{
+    "challenge_module": "EvenWrong.Demo",
+    "solution_module": "NotWrong.Demo",
+    "theorem_names": ["EvenWrong.Demo.nat_add_comm"],
+    "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+    "enable_nanoda": false
+}

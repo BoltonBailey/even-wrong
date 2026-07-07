@@ -1,0 +1,23 @@
+/-!
+# NotWrong.Basic
+
+Root documentation module for the `NotWrong` library.
+
+`NotWrong` is the **mostly-AI** half of this repository. It contains *solutions*:
+real, `sorry`-free proofs of statements posed in `EvenWrong`, written in a
+[comparator](https://github.com/leanprover/comparator)-friendly format.
+
+"Comparator-friendly" means: for each solved challenge, `NotWrong` declares a
+theorem with **the exact same fully-qualified name and statement** as the
+`EvenWrong` challenge, but with a genuine proof attached. `NotWrong` modules do
+**not** import `EvenWrong`; each side is built independently and `comparator`
+checks that the two declarations are identical up to their proof terms (see the
+`comparator/` directory).
+
+Invariants for everything under `NotWrong/`:
+
+* no `sorry` / `admit`, and the standard Mathlib CI checks pass;
+* the set of `EvenWrong` challenges proven here never shrinks;
+* changes that do not add a newly-proven challenge must improve the golf metric
+  (see `scripts/golf_metric.sh` and the `README.md`).
+-/
