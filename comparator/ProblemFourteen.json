@@ -1,0 +1,7 @@
+{
+    "challenge_module": "EvenWrong.ProblemFourteen",
+    "solution_module": "NotWrong.ProblemFourteen",
+    "theorem_names": ["sub_le_e", "zero_le_e", "e_pos_of_pos", "pos_e_swap_add", "e_succ_succ", "e_eq_zero_of_inner_nonpos"],
+    "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+    "enable_nanoda": false
+}
