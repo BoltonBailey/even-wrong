@@ -21,15 +21,3 @@ Updates to `NotWrong` essentially take the form of an optimization problem that 
 1. Satisfy as many of the comparator checks as possible (i.e. prove as many theorems as possible)
 1. Make sure that the code quality is as good as possible, according to a particular programmatic metric defined in the scripts folder.
 
-## TODOs
-
-### GitHub configuration
-
-To set up the GitHub repository:
-
-* Under your repository name, click **Settings**.
-* In the **Actions** section of the sidebar, click "General".
-* Check the box **Allow GitHub Actions to create and approve pull requests**.
-* Click the **Pages** section of the settings sidebar.
-* In the **Source** dropdown menu, select "GitHub Actions".
-
