@@ -13,6 +13,8 @@ This file contains the definition for a monad-like type transformation `ProbEval
 which encapsulates probabilistic computations (defined using VCVio's `ProbComp`)
 that return the same value more than half of the time.
 
+Note: We could actually maybe do *any ProbComp with a gap from the highest probability to the second highest probability*. Because we can then just sample enough that we identify the top values and the gaps.
+
 The concept of this structure
 is that it's useful as an encapsulation for actions that arise in probabilistic tests.
 
