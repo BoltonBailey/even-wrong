@@ -1,10 +1,17 @@
+/-
+Copyright (c) 2026 Bolton Bailey. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bolton Bailey
+-/
 -- NOTE: unlike the rest of this repository, this file is deliberately *not* a `module`.
 -- It depends on `VCVio`, which has not been converted to the module system, and Lean
 -- forbids a `module` from importing a non-`module`. Consequently `EvenWrong.lean` cannot
 -- import this file either; it is built by its own `EvenWrongProbEval` target in the
 -- lakefile. Re-modulize this file once VCVio is modulized upstream.
 
+import Mathlib
 import VCVio.OracleComp.ProbComp
+import EvenWrong.Games.Minesweeper
 
 /-!
 
@@ -103,3 +110,97 @@ and amortized each call takes about the polynomial buudget fraction in the numbe
 -/
 def ProbEval.bind {α β} (p : ProbEval α) (f : α → ProbEval β) : ProbEval β :=
   sorry
+
+/-! ## The examples from the module docstring
+
+Each of the three examples above is stated below as a challenge: the `ProbEval` itself is the
+object to be constructed, and the accompanying theorems pin down *which* value it evaluates to
+(its `val`) and *how good* its soundness bound is (its `bound_correct`). The `soundness` field of
+`ProbEval` already carries the probabilistic content, so no separate probability statement is
+needed.
+-/
+
+/-! ### Miller-Rabin primality testing -/
+
+/--
+A single round of the Miller-Rabin test on `n`, as a probabilistic evaluable.
+
+Miller-Rabin never rejects a prime, and rejects a composite with probability at least `3/4`, so
+one round already clears the `1/2` threshold that `ProbEval` demands.
+-/
+def millerRabin (n : ℕ) : ProbEval Bool :=
+  sorry
+
+/-- Miller-Rabin evaluates to `true` on exactly the primes. -/
+theorem millerRabin_val_eq_true_iff (n : ℕ) :
+    (millerRabin n).val = true ↔ n.Prime :=
+  sorry
+
+/-- A single round of Miller-Rabin achieves soundness bound `3/4`. -/
+theorem millerRabin_bound_correct (n : ℕ) :
+    (millerRabin n).bound_correct = 3 / 4 :=
+  sorry
+
+/-! ### Schwartz-Zippel polynomial identity testing -/
+
+section SchwartzZippel
+
+variable {R : Type} [CommRing R] [IsDomain R] [DecidableEq R] {n : ℕ}
+
+/--
+Polynomial identity testing for `p` and `q` by the Schwartz-Zippel lemma, as a probabilistic
+evaluable: evaluate `p - q` at a point drawn uniformly from `S ^ n` and report whether the
+results agree.
+
+The statement is for multivariate polynomials, which is where Schwartz-Zippel has content; the
+univariate case is `n = 1`. By `MvPolynomial.schwartz_zippel_totalDegree`, a nonzero difference of
+total degree at most `d` vanishes at such a point with probability at most `d / #S`, so the
+hypothesis `2 * d < #S` is exactly what pushes the soundness bound above `1/2`.
+-/
+def schwartzZippel (p q : MvPolynomial (Fin n) R) (S : Finset R) (d : ℕ)
+    (hd : (p - q).totalDegree ≤ d) (hS : 2 * d < S.card) : ProbEval Bool :=
+  sorry
+
+/-- The Schwartz-Zippel test evaluates to `true` exactly when the two polynomials are equal. -/
+theorem schwartzZippel_val_eq_true_iff (p q : MvPolynomial (Fin n) R) (S : Finset R) (d : ℕ)
+    (hd : (p - q).totalDegree ≤ d) (hS : 2 * d < S.card) :
+    (schwartzZippel p q S d hd hS).val = true ↔ p = q :=
+  sorry
+
+/-- The Schwartz-Zippel test achieves the soundness bound supplied by the Schwartz-Zippel lemma. -/
+theorem schwartzZippel_bound_correct (p q : MvPolynomial (Fin n) R) (S : Finset R) (d : ℕ)
+    (hd : (p - q).totalDegree ≤ d) (hS : 2 * d < S.card) :
+    (schwartzZippel p q S d hd hS).bound_correct = 1 - (d : ℚ≥0) / (S.card : ℚ≥0) :=
+  sorry
+
+end SchwartzZippel
+
+/-! ### Minesweeper: choosing the best cell to open -/
+
+section Minesweeper
+
+open Minesweeper
+
+variable {h w : ℕ}
+
+/--
+A statistical minesweeper solver, as a probabilistic evaluable: it returns a cell that is optimal
+to open, found by bounding the equity of each candidate cell from above and below by sampling
+rather than by computing `Board.openingEquity` exactly.
+-/
+def bestOpening (board : Board h w) : ProbEval (Fin h × Fin w) :=
+  sorry
+
+/-- The cell returned is one that can actually be opened. -/
+theorem bestOpening_val_mem (board : Board h w) (hb : board.unrevealedCells ≠ []) :
+    (bestOpening board).val ∈ board.unrevealedCells :=
+  sorry
+
+/-- The cell returned maximises the expected equity over all cells that can be opened. -/
+theorem openingEquity_le_bestOpening (board : Board h w) (hb : board.unrevealedCells ≠ [])
+    (c : Fin h × Fin w) (hc : c ∈ board.unrevealedCells) :
+    board.openingEquity c.1 c.2 ≤
+      board.openingEquity (bestOpening board).val.1 (bestOpening board).val.2 :=
+  sorry
+
+end Minesweeper

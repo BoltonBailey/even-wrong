@@ -1,4 +1,8 @@
-
+/-
+Copyright (c) 2026 Bolton Bailey. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Bolton Bailey
+-/
 -- import Mathlib
 module
 
@@ -187,6 +191,19 @@ partial def Board.equity (board : Board h w) : Option Rat :=
 --   board.unrevealedCount
 -- decreasing_by
 
+/--
+The expected equity of opening the cell `(i, j)`, averaged over the adjacent-mine counts that
+opening it may reveal and assuming optimal play afterwards.
+
+This is the quantity that `Board.equity` maximises over `board.unrevealedCells`, exposed on its
+own so that "the best cell to open" can be stated.
+-/
+def Board.openingEquity (board : Board h w) (i : Fin h) (j : Fin w) : Rat :=
+  (List.range 9).filterMap (fun k =>
+    let nextBoard := board.writeCell i j k
+    let probability := board.openingOutcomeProbability i j k
+    nextBoard.equity.map (· * probability)
+  ) |>.sum
 
 /--
 Calculates the expected equity of the board with optimal play, checking guaranteed-safe openings first.

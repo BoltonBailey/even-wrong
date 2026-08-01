@@ -20,8 +20,9 @@ it solves, so [`EvenWrong/Games/ProblemFourteen.lean`](EvenWrong/Games/ProblemFo
 is answered by [`NotWrong/Games/ProblemFourteen.lean`](NotWrong/Games/ProblemFourteen.lean).
 
 - [`Combinatorics/`](EvenWrong/Combinatorics/) — polyomino piercing density
-- [`Computability/`](EvenWrong/Computability/) — bitstring encodings and polynomial time, probabilistic evaluation
+- [`Computability/`](EvenWrong/Computability/) — probabilistic evaluation
 - [`Games/`](EvenWrong/Games/) — strategic settings, Braess's paradox with tolls, tournament games, Minesweeper equity, Problem 14 (red/black card equity)
+- [`Probability/`](EvenWrong/Probability/) — minimum statistical distance between a sum of two and a sum of three i.i.d. positive variables
 
 `Basic.lean` (library documentation) and `Demo.lean` (worked example of the
 challenge/solution workflow) stay at the root of each library.
@@ -31,4 +32,9 @@ Updates to `NotWrong` essentially take the form of an optimization problem that 
 1. Make sure that any lean code in the folder passes standard CI / Linter checks.
 1. Satisfy as many of the comparator checks as possible (i.e. prove as many theorems as possible)
 1. Make sure that the code quality is as good as possible, according to a particular programmatic metric defined in the scripts folder.
+
+## License
+
+Released under the Apache License 2.0, as described in [`LICENSE`](LICENSE). Each Lean file carries
+the corresponding copyright header.
 
