@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-! # Rationality of the minimal piercing density of a polyomino
 
@@ -16,6 +18,8 @@ The claim formalized here (left as `sorry`) is:
 This is the discrete analogue of a covering/piercing problem; the rationality reflects the fact that
 an optimal transversal can be taken to be periodic.
 -/
+
+@[expose] public section
 
 namespace PolyominoCover
 

@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # NotWrong.ProblemFourteen
@@ -16,6 +18,8 @@ The theorems solved here are exactly the ones whose proofs are independent of th
 `pos_e_swap_add`, and the two structural unfoldings `e_succ_succ` and
 `e_eq_zero_of_inner_nonpos`.
 -/
+
+@[expose] public section
 
 /-! ## Definition re-declared from `EvenWrong` (comparator-friendly) -/
 

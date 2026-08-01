@@ -1,12 +1,14 @@
-import EvenWrong.Basic
-import EvenWrong.BraessWithTolls
-import EvenWrong.Demo
-import EvenWrong.Minesweeper
-import EvenWrong.PolyominoCover
-import EvenWrong.Polytime
+module
+
+public import EvenWrong.Basic
+public import EvenWrong.BraessWithTolls
+public import EvenWrong.Demo
+public import EvenWrong.Minesweeper
+public import EvenWrong.PolyominoCover
+public import EvenWrong.Polytime
 -- `EvenWrong.ProbEval` requires the `VCVio` package; import it once `VCVio` is added
 -- to the lakefile as a dependency.
 -- import EvenWrong.ProbEval
-import EvenWrong.ProblemFourteen
-import EvenWrong.StrategicSettings.Basic
-import EvenWrong.TournamentGame
+public import EvenWrong.ProblemFourteen
+public import EvenWrong.StrategicSettings.Basic
+public import EvenWrong.TournamentGame

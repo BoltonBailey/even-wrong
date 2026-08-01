@@ -1,4 +1,6 @@
-import EvenWrong.TournamentGame.Basic
+module
+
+public import EvenWrong.TournamentGame.Basic
 
 /-!
 # Uniqueness of the tournament-game equilibrium (challenge)
@@ -11,6 +13,8 @@ following the argument of Will Sawin's MathOverflow answer
 This is a *challenge* statement; a comparator-friendly solution lives in
 `NotWrong.TournamentGame` (paired by `comparator/TournamentGame.json`).
 -/
+
+@[expose] public section
 
 /--
 **A tournament game has at most one mixed-strategy Nash equilibrium.**

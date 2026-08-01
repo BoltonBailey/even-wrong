@@ -1,3 +1,5 @@
+module
+
 /-!
 # EvenWrong.Demo
 
@@ -9,6 +11,8 @@ identical statement and a real proof, and `comparator` accepts the pair (see
 This module deliberately mixes a provable statement with a false one to
 demonstrate that the `EvenWrong` library tolerates wrong statements.
 -/
+
+@[expose] public section
 
 namespace EvenWrong.Demo
 

@@ -1,1 +1,3 @@
-import EvenWrong.Minesweeper.Basic
+module
+
+public import EvenWrong.Minesweeper.Basic

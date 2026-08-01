@@ -1,3 +1,5 @@
+module
+
 /-!
 # EvenWrong.Basic
 
@@ -16,3 +18,5 @@ Each public theorem in an `EvenWrong.*` module is a *challenge* that the
 [comparator](https://github.com/leanprover/comparator)-friendly way. See the
 repository `README.md` for the full workflow.
 -/
+
+@[expose] public section

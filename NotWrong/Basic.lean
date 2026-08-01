@@ -1,3 +1,5 @@
+module
+
 /-!
 # NotWrong.Basic
 
@@ -21,3 +23,5 @@ Invariants for everything under `NotWrong/`:
 * changes that do not add a newly-proven challenge must improve the golf metric
   (see `scripts/golf_metric.sh` and the `README.md`).
 -/
+
+@[expose] public section

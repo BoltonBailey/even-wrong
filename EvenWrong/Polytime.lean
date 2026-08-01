@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Bitstring encodings and polynomial-time computability
@@ -40,6 +42,8 @@ formalization challenges:
 * `isPolytime_twoSatDecision` — 2-SAT is in P (linear time, Aspvall–Plass–Tarjan 1979).
 * `isPolytime_matchingDecision` — maximum matching is in P (Edmonds, 1965).
 -/
+
+@[expose] public section
 
 /-- A canonical encoding of a type as bitstrings (`List Bool`).
 

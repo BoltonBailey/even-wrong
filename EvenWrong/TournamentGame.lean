@@ -1,2 +1,4 @@
-import EvenWrong.TournamentGame.Basic
-import EvenWrong.TournamentGame.Uniqueness
+module
+
+public import EvenWrong.TournamentGame.Basic
+public import EvenWrong.TournamentGame.Uniqueness

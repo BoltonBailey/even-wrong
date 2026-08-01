@@ -1,5 +1,9 @@
-import Mathlib
-import EvenWrong.StrategicSettings.Basic
+module
+
+public import Mathlib
+public import EvenWrong.StrategicSettings.Basic
+
+@[expose] public section
 
 open Finset
 

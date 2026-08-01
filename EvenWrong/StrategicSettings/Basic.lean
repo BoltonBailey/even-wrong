@@ -1,5 +1,9 @@
 
-import Mathlib
+module
+
+public import Mathlib
+
+@[expose] public section
 
 structure StrategicSetting (Players : Type) (States : Type) where
   /- For any player, the type of information states available to that player -/

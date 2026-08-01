@@ -1,5 +1,7 @@
 
-import Mathlib
+module
+
+public import Mathlib
 
 
 /-! # Braess's paradox with tolls
@@ -33,6 +35,8 @@ This bilevel (Stackelberg-style) structure replaces the earlier single-profile m
 toll company could deviate while the driver proportions were frozen — and so always had an
 incentive to raise its toll.
 -/
+
+@[expose] public section
 
 namespace Braess
 

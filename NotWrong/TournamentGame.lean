@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # NotWrong.TournamentGame
@@ -20,6 +22,8 @@ The proof is licensed under CC-BY-SA 4.0,
 
 <https://creativecommons.org/licenses/by-sa/4.0/>
 -/
+
+@[expose] public section
 
 /-! ## Definitions re-declared from `EvenWrong` (comparator-friendly) -/
 

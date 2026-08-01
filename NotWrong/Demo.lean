@@ -1,3 +1,5 @@
+module
+
 /-!
 # NotWrong.Demo
 
@@ -9,6 +11,8 @@ declarations. This module does not import `EvenWrong`.
 
 `EvenWrong.Demo.two_plus_two` is false, so it has no solution here.
 -/
+
+@[expose] public section
 
 namespace EvenWrong.Demo
 

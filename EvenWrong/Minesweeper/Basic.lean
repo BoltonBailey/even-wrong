@@ -1,5 +1,10 @@
 
 -- import Mathlib
+module
+
+-- Not `@[expose]`: the public definitions below are implemented in terms of the `private`
+-- helpers in this module, and exposed bodies may only mention public declarations.
+public section
 
 namespace Minesweeper
 

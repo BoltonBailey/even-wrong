@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 -- NOTE: the original development of this file used the `sos` tactic from the `SOS`
 -- package, which is not (yet) a dependency of this repository. Two proof steps that
@@ -22,6 +24,8 @@ the equity of a game with red and black cards, as described in the reference:
 > Also, what is the expected payoff following this optimal rule?
 
 -/
+
+@[expose] public section
 
 
 /--

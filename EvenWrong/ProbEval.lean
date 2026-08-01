@@ -1,8 +1,9 @@
 -- NOTE: this module requires the `VCVio` package, which is not (yet) a dependency
 -- of this repository. It is therefore not imported from `EvenWrong.lean`; add
 -- `VCVio` to the lakefile and import this module to activate these challenges.
+module
 
-import VCVio.OracleComp.ProbComp
+public import VCVio.OracleComp.ProbComp
 
 /-!
 
@@ -26,6 +27,8 @@ Here are some examples of uses of this structure:
   by statistically upper or lower bounding the equity of each other cell.
 
 -/
+
+@[expose] public section
 
 
 /--
