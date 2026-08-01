@@ -1,9 +1,10 @@
--- NOTE: this module requires the `VCVio` package, which is not (yet) a dependency
--- of this repository. It is therefore not imported from `EvenWrong.lean`; add
--- `VCVio` to the lakefile and import this module to activate these challenges.
-module
+-- NOTE: unlike the rest of this repository, this file is deliberately *not* a `module`.
+-- It depends on `VCVio`, which has not been converted to the module system, and Lean
+-- forbids a `module` from importing a non-`module`. Consequently `EvenWrong.lean` cannot
+-- import this file either; it is built by its own `EvenWrongProbEval` target in the
+-- lakefile. Re-modulize this file once VCVio is modulized upstream.
 
-public import VCVio.OracleComp.ProbComp
+import VCVio.OracleComp.ProbComp
 
 /-!
 
@@ -13,7 +14,9 @@ This file contains the definition for a monad-like type transformation `ProbEval
 which encapsulates probabilistic computations (defined using VCVio's `ProbComp`)
 that return the same value more than half of the time.
 
-Note: We could actually maybe do *any ProbComp with a gap from the highest probability to the second highest probability*. Because we can then just sample enough that we identify the top values and the gaps.
+Note: We could actually maybe do *any ProbComp with a gap from the highest probability to the
+second highest probability*. Because we can then just sample enough that we identify the top
+values and the gaps.
 
 The concept of this structure
 is that it's useful as an encapsulation for actions that arise in probabilistic tests.
@@ -29,9 +32,6 @@ Here are some examples of uses of this structure:
   by statistically upper or lower bounding the equity of each other cell.
 
 -/
-
-@[expose] public section
-
 
 /--
 Probabilistic evaluables

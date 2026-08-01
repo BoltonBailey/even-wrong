@@ -1,7 +1,7 @@
 name = "even-wrong"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["EvenWrong", "NotWrong"]
+defaultTargets = ["EvenWrong", "NotWrong", "EvenWrongProbEval"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
@@ -19,8 +19,20 @@ name = "cslib"
 scope = "leanprover"
 rev = "v4.31.0"
 
+[[require]]
+name = "VCVio"
+scope = "Verified-zkEVM"
+rev = "v4.31.0"
+
 [[lean_lib]]
 name = "EvenWrong"
 
 [[lean_lib]]
 name = "NotWrong"
+
+# `EvenWrong.Computability.ProbEval` depends on `VCVio`, which is not modulized, so it
+# cannot be a `module` and therefore cannot be reached from the `EvenWrong` root module.
+# It gets its own target so that it is still built and checked.
+[[lean_lib]]
+name = "EvenWrongProbEval"
+roots = ["EvenWrong.Computability.ProbEval"]
