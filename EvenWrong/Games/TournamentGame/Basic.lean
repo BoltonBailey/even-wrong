@@ -1,7 +1,7 @@
 module
 
 public import Mathlib
-public import EvenWrong.StrategicSettings.Basic
+public import EvenWrong.Games.StrategicSettings
 
 @[expose] public section
 

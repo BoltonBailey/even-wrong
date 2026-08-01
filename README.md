@@ -15,6 +15,17 @@ In this repository, we draw the line against allowing statements that are "not e
 - comparator/ -      comparator configs describing solutions
 - scripts/  -        metric + check scripts used by CI
 
+Both libraries are organized by topic. A solution module mirrors the path of the challenge
+it solves, so [`EvenWrong/Games/ProblemFourteen.lean`](EvenWrong/Games/ProblemFourteen.lean)
+is answered by [`NotWrong/Games/ProblemFourteen.lean`](NotWrong/Games/ProblemFourteen.lean).
+
+- [`Combinatorics/`](EvenWrong/Combinatorics/) — polyomino piercing density
+- [`Computability/`](EvenWrong/Computability/) — bitstring encodings and polynomial time, probabilistic evaluation
+- [`Games/`](EvenWrong/Games/) — strategic settings, Braess's paradox with tolls, tournament games, Minesweeper equity, Problem 14 (red/black card equity)
+
+`Basic.lean` (library documentation) and `Demo.lean` (worked example of the
+challenge/solution workflow) stay at the root of each library.
+
 Updates to `NotWrong` essentially take the form of an optimization problem that AIs can be directed to solve, where the following priorities in decreasing order of importance
 
 1. Make sure that any lean code in the folder passes standard CI / Linter checks.

@@ -17,6 +17,13 @@ Each public theorem in an `EvenWrong.*` module is a *challenge* that the
 `NotWrong` library may try to discharge in a
 [comparator](https://github.com/leanprover/comparator)-friendly way. See the
 repository `README.md` for the full workflow.
+
+## Organization
+
+Challenges are filed by subject: `EvenWrong.Combinatorics.*`, `EvenWrong.Computability.*`
+and `EvenWrong.Games.*`. `Games` collects both multi-player strategic settings and the
+equity of single-player games under optimal play. Only this module and `EvenWrong.Demo`
+live at the root.
 -/
 
 @[expose] public section

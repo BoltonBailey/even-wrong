@@ -1,6 +1,6 @@
 module
 
-public import EvenWrong.TournamentGame.Basic
+public import EvenWrong.Games.TournamentGame.Basic
 
 /-!
 # Uniqueness of the tournament-game equilibrium (challenge)
@@ -11,7 +11,7 @@ following the argument of Will Sawin's MathOverflow answer
 <https://creativecommons.org/licenses/by-sa/4.0/>).
 
 This is a *challenge* statement; a comparator-friendly solution lives in
-`NotWrong.TournamentGame` (paired by `comparator/TournamentGame.json`).
+`NotWrong.Games.TournamentGame` (paired by `comparator/TournamentGame.json`).
 -/
 
 @[expose] public section

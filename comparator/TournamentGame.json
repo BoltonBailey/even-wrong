@@ -1,6 +1,6 @@
 {
-    "challenge_module": "EvenWrong.TournamentGame.Uniqueness",
-    "solution_module": "NotWrong.TournamentGame",
+    "challenge_module": "EvenWrong.Games.TournamentGame.Uniqueness",
+    "solution_module": "NotWrong.Games.TournamentGame",
     "theorem_names": ["TournamentGame.subsingleton_mixedNashEquilibrium"],
     "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
     "enable_nanoda": false

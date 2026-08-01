@@ -16,6 +16,10 @@ theorem with **the exact same fully-qualified name and statement** as the
 checks that the two declarations are identical up to their proof terms (see the
 `comparator/` directory).
 
+Solution modules mirror the topic path of the challenges they solve, so
+`EvenWrong.Games.ProblemFourteen` is answered by
+`NotWrong.Games.ProblemFourteen`.
+
 Invariants for everything under `NotWrong/`:
 
 * no `sorry` / `admit`, and the standard Mathlib CI checks pass;

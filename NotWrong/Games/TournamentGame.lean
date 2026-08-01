@@ -3,14 +3,14 @@ module
 public import Mathlib
 
 /-!
-# NotWrong.TournamentGame
+# NotWrong.Games.TournamentGame
 
 Solution to the challenge `TournamentGame.subsingleton_mixedNashEquilibrium` posed in
-`EvenWrong.TournamentGame.Uniqueness` (paired by `comparator/TournamentGame.json`).
+`EvenWrong.Games.TournamentGame.Uniqueness` (paired by `comparator/TournamentGame.json`).
 
 This module does **not** import `EvenWrong`. The definitions the challenge statement
 depends on (`UniformActionNormalFormGame` and `TournamentGame`) are re-declared here,
-verbatim, from `EvenWrong.StrategicSettings.Basic` and `EvenWrong.TournamentGame.Basic`,
+verbatim, from `EvenWrong.Games.StrategicSettings` and `EvenWrong.Games.TournamentGame.Basic`,
 so that `comparator` can match the declarations.
 
 The proof is an autoformalization of (the uniqueness half of) the proof provided by

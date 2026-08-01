@@ -3,14 +3,14 @@ module
 public import Mathlib
 
 /-!
-# NotWrong.ProblemFourteen
+# NotWrong.Games.ProblemFourteen
 
-Solutions to the self-contained equity challenges posed in `EvenWrong.ProblemFourteen`
+Solutions to the self-contained equity challenges posed in `EvenWrong.Games.ProblemFourteen`
 (paired by `comparator/ProblemFourteen.json`).
 
 This module does **not** import `EvenWrong`. The only definition the challenge statements
 depend on is the equity recursion `e`, which is re-declared here verbatim from
-`EvenWrong.ProblemFourteen` so that `comparator` can match the declarations.
+`EvenWrong.Games.ProblemFourteen` so that `comparator` can match the declarations.
 
 The theorems solved here are exactly the ones whose proofs are independent of the
 (`SOS`-dependent) barrier development: the lower bound `sub_le_e`, nonnegativity
