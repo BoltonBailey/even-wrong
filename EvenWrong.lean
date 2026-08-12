@@ -7,9 +7,7 @@ module
 
 public import EvenWrong.Basic
 public import EvenWrong.Combinatorics.PolyominoCover
--- `EvenWrong.Computability.ProbEval` cannot be imported here: it depends on `VCVio`, which is
--- not modulized, so it is not a `module` and a `module` may not import it. It is built by the
--- separate `EvenWrongProbEval` target instead.
+public import EvenWrong.Computability.ProbEval
 public import EvenWrong.Demo
 public import EvenWrong.Games.BraessWithTolls
 public import EvenWrong.Games.Minesweeper

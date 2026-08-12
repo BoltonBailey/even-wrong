@@ -3,15 +3,11 @@ Copyright (c) 2026 Bolton Bailey. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Bolton Bailey
 -/
--- NOTE: unlike the rest of this repository, this file is deliberately *not* a `module`.
--- It depends on `VCVio`, which has not been converted to the module system, and Lean
--- forbids a `module` from importing a non-`module`. Consequently `EvenWrong.lean` cannot
--- import this file either; it is built by its own `EvenWrongProbEval` target in the
--- lakefile. Re-modulize this file once VCVio is modulized upstream.
+module
 
-import Mathlib
-import VCVio.OracleComp.ProbComp
-import EvenWrong.Games.Minesweeper
+public import Mathlib
+public import VCVio.OracleComp.ProbComp
+public import EvenWrong.Games.Minesweeper
 
 /-!
 
@@ -39,6 +35,8 @@ Here are some examples of uses of this structure:
   by statistically upper or lower bounding the equity of each other cell.
 
 -/
+
+@[expose] public section
 
 /--
 Probabilistic evaluables
