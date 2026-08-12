@@ -17,3 +17,4 @@ public import EvenWrong.Games.ProblemFourteen
 public import EvenWrong.Games.StrategicSettings
 public import EvenWrong.Games.TournamentGame.Basic
 public import EvenWrong.Probability.SumsOfIID
+public import EvenWrong.Probability.VonNeumannCoin

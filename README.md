@@ -22,7 +22,9 @@ is answered by [`NotWrong/Games/ProblemFourteen.lean`](NotWrong/Games/ProblemFou
 - [`Combinatorics/`](EvenWrong/Combinatorics/) — polyomino piercing density
 - [`Computability/`](EvenWrong/Computability/) — probabilistic evaluation
 - [`Games/`](EvenWrong/Games/) — strategic settings, Braess's paradox with tolls, tournament games, Minesweeper equity, Problem 14 (red/black card equity)
-- [`Probability/`](EvenWrong/Probability/) — minimum statistical distance between a sum of two and a sum of three i.i.d. positive variables
+- [`Probability/`](EvenWrong/Probability/) — minimum statistical distance between a sum of two and a
+  sum of three i.i.d. positive variables; optimality of von Neumann's fair-flips-from-a-biased-coin
+  procedure and its power-of-two extension
 
 `Basic.lean` (library documentation) and `Demo.lean` (worked example of the
 challenge/solution workflow) stay at the root of each library.
