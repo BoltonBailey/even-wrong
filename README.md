@@ -10,7 +10,7 @@ In this repository, we draw the line against allowing statements that are "not e
 
 ## Structure
 
-- [`EvenWrong/`](EvenWrong/) — a mostly-human library of mathematical statements and definitions
+- [`EvenWrong/`](EvenWrong/) — a human-driven (but in practice mostly AI-written) library of mathematical statements and definitions
 - [`NotWrong/`](NotWrong/) — a mostly-AI library of solutions.
 - comparator/ -      comparator configs describing solutions
 - scripts/  -        metric + check scripts used by CI
@@ -18,13 +18,6 @@ In this repository, we draw the line against allowing statements that are "not e
 Both libraries are organized by topic. A solution module mirrors the path of the challenge
 it solves, so [`EvenWrong/Games/ProblemFourteen.lean`](EvenWrong/Games/ProblemFourteen.lean)
 is answered by [`NotWrong/Games/ProblemFourteen.lean`](NotWrong/Games/ProblemFourteen.lean).
-
-- [`Combinatorics/`](EvenWrong/Combinatorics/) — polyomino piercing density
-- [`Computability/`](EvenWrong/Computability/) — probabilistic evaluation
-- [`Games/`](EvenWrong/Games/) — strategic settings, Braess's paradox with tolls, tournament games, Minesweeper equity, Problem 14 (red/black card equity)
-- [`Probability/`](EvenWrong/Probability/) — minimum statistical distance between a sum of two and a
-  sum of three i.i.d. positive variables; optimality of von Neumann's fair-flips-from-a-biased-coin
-  procedure and its power-of-two extension
 
 `Basic.lean` (library documentation) and `Demo.lean` (worked example of the
 challenge/solution workflow) stay at the root of each library.
